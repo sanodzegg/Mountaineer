@@ -1,0 +1,160 @@
+@import "./keyframes";
+body {
+    overflow: hidden;
+}
+.main-loader {
+    @include absolute(50, 50);
+    height: 100vh;
+    width: 100vw;
+    background-color: #393A42;
+    svg {
+        height: 3.75rem;
+        width: 3.75rem;
+        @include absolute(50, 50);
+        fill: #4c9daf;
+        animation: loader 1.3s;
+        animation-iteration-count: infinite;
+    }
+}
+
+.landing-section {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../media/jpg/landing-mountain.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 5rem;
+        h1 {
+            font-weight: normal;
+            color: #fff;
+        }
+        .logo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 13rem;
+            .logo-text-area {
+                display: inline-block;
+                width: 9rem;
+                max-width: 100%;
+                text-align: right;
+                span {
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+            }
+            svg {
+                fill: #fff;
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        max-width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        .back-blur {
+            position: absolute;
+            top: 0;
+            left: -.1rem;
+            right: 0;
+            bottom: -.1rem;
+            background-color: #393B43;
+            filter: blur(1px);
+            width: 110vw;
+            opacity: 0.95;
+            z-index: -1;
+        }
+        .flex-l {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 23%;
+            padding: 3rem 0;
+            ul {
+                display: inline-flex;
+                flex-direction: column;
+                li {
+                    white-space: nowrap;
+                    padding: .25rem .5rem;
+                    margin: .4rem 0;
+                    display: inline-block;
+                    list-style: none;
+                    text-transform: capitalize;
+                    font-size: .9rem;
+                    color: #fff;
+                    font-weight: normal;
+                    background-color: transparent;
+                    border-radius: 1.5rem;
+                    text-align: left;
+                    transition: 0.3s;
+                }
+                li:hover {
+                    background-color: #47494B;
+                    animation-play-state: paused;
+                    transition: 0.3s;
+                    cursor: pointer;
+                }
+            }
+            .percentage-disp {
+                text-align: center;
+                font-size: 5rem;
+                color: #fff;
+                font-size: bold;
+            }
+        }
+        .flex-r {
+            display: flex;
+            justify-content: center;
+            width: 77%;
+            .box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-left: .17rem solid #46494e;
+                padding: 3.9rem 2rem;
+                min-width: 17rem;
+                button {
+                    background-color: #356975;
+                    border-radius: 0.6rem;
+                    padding: 0.3rem 0.3rem;
+                    font-size: .7rem;
+                    color: #fff;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+                svg {
+                    fill: #fff;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+                .nums {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span {
+                        white-space: nowrap;
+                        color: #fff;
+                        text-transform: uppercase;
+                        padding: 0 .5rem;
+                    }
+                }
+                * {
+                    margin: 1rem 0;
+                }
+            }
+            .box:nth-child(4){
+                border-right: .17rem solid #46494e;
+            }
+        }
+    }
+}
