@@ -54,6 +54,51 @@ body {
             }
         }
     }
+    .dynamic-points {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        .pt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .mount-name {
+                background: linear-gradient(180deg, rgba(83,85,88,0.818) 0%, rgba(83,85,88,0.644) 65%, rgba(83,85,88,0) 100%);
+                border-radius: 1rem;
+                padding: 0.23rem 0.3rem;
+                font-size: .7rem;
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            .outer-dot {
+                position: relative;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.2);
+                animation: heartbeat 3s;
+                animation-iteration-count: infinite;
+                .dot {
+                    @include absolute(50, 50);
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    border-radius: 50%;
+                    background-color: #fff;
+                }
+            }
+            .mount-height {
+                white-space: nowrap;
+                color: #fff;
+                text-transform: uppercase;
+                padding: 0 0.5rem;
+            }
+        }
+    }
     footer {
         position: fixed;
         bottom: 0;
@@ -83,6 +128,11 @@ body {
             ul {
                 display: inline-flex;
                 flex-direction: column;
+                .list-selected {
+                    background-color: #47494B;
+                    animation-play-state: paused;
+                    transition: 0.3s;
+                }
                 li {
                     white-space: nowrap;
                     padding: .25rem .5rem;
@@ -93,7 +143,6 @@ body {
                     font-size: .9rem;
                     color: #fff;
                     font-weight: normal;
-                    background-color: transparent;
                     border-radius: 1.5rem;
                     text-align: left;
                     transition: 0.3s;
