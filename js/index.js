@@ -134,7 +134,7 @@ var dataarr = [
 $(document).ready(function() {
     $('.main-loader').fadeOut("slow");
     $('.landing-section').css({
-        'background-image': `url(../media/jpg/peak-2.jpg)`
+        'background-image': `url(./media/jpg/peak-2.jpg)`
     })
     $('footer').css("display", "flex").hide().fadeIn("slow");
     let arrofspan = [];
@@ -165,7 +165,7 @@ for(let i = 0; i < $('li').length; i++) {
             if(e == i) {
                 $(this).addClass('list-selected')
                 $('.landing-section').css({
-                    'background-image': `url(../media/jpg/peak-${i}.jpg)`
+                    'background-image': `url(./media/jpg/peak-${i}.jpg)`
                 })
                 $('.dynamic-points').empty()
                 break;
